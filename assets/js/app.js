@@ -17,7 +17,6 @@ var timerTarget;
 function startGame() {
 	//reset all variables
 	printQuestion();
-	startTimer();
 
 };
 
@@ -31,6 +30,7 @@ function printQuestion() {
 		choiceToPrint = ("<p><a class='btn btn-primary btn-lg choice' role='button'>" + questionArray[currentQuestion].choices[i] + "</a></p>");
 		$( ".jumbotron" ).append( choiceToPrint );
 	}
+	startTimer();
 }
 
 
@@ -38,7 +38,7 @@ function startTimer() {
 	questionTimer = 15;
 	$('#timer').html(questionTimer);
 	//wait 2 seconds, clear damage report and move playerCard back
-	var timerTarget = setInterval(function(){
+	timerTarget = setInterval(function(){
 		updateTimer();
 	},1000); 
 }
@@ -47,6 +47,9 @@ function updateTimer() {
 	questionTimer--;
 	if (questionTimer < 1 ) {
 		clearInterval(timerTarget);
+		currentQuestion++;
+		printQuestion();
+
 		//call next question
 	} else if (questionTimer < 6 ) {
 		$("#timer").addClass("lowTime");

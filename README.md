@@ -24,4 +24,5 @@ Created base HTML document
 Created dummy question objects
 Dynamically insert question text & choices onto screen
 Created 15 second timer function
+Set/Clear timers per question. Auto-advance when timer reaches zero.
 
