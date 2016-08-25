@@ -3,79 +3,43 @@
 <head>
 	<title>
 	</title>
-	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/cyborg/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/yeti/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
 </head>
 <body>
 
-<header>
-	<row>
-		<div class="col-md-2"><h2>Wins</h2><h3 id="winTotal">0</h3></div>
-		<div class="col-md-8"><img src="assets/images/starwars.jpg" class="headerImage"></div>
-		<div class="col-md-2"><h2>Losses</h2><h3 id="lossTotal">0</h3></div>
-</header>
+<div class="container">
 
 
 
-<div id="allCharacters">
-	<h2>Select Your Character</h2>
-</div>
 
 
-<row>
-	<div class="col-md-5">
-		<row>
-			<div id="human" class="col-md-10">
-				<h2>Your Character</h2>
-				<div id="playerCard"></div>
-				</div>
-			<div id="playerDamageDealt"></div>
-		</row>
-	</div>
-
-
-	<div class=col-md-2>
-		<div id="VS">
-			<h1>Versus</h1>
+	<div class="row">
+		<div class="jumbotron col-md-10">
+			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 		</div>
-	</div>
-
-
-	<div class="col-md-5">
-		<row>
-		<div id="enemyDamageDealt" class="col-md-2"></div>
-		<div id="currentEnemy" class="col-md-10">
-			<h2>Current Enemy</h2>
-			<div id="currentEnemyCard"></div>
-		</div>
-			
-		</div>
-	</div>
-</row>
-
-<div id="attack">
-	<button type="button" id="attackButton" class="btn btn-default btn-lg">Attack!</button>
-</div>
-
-<div id="enemies">
-	<hr>
-	<h2 id="enemyWaitingList">Select your first opponent</h2>
-	<div id="enemyCardHolder"></div>
-
-</div>
-
-<div id="newGame">
-	<button type="button" id="playAgain" class="btn btn-default btn-lg">Play Again</button>
-</div>
 	
+		<div class="panel panel-default col-md-2">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Time Remaining</h3>
+		  </div>
+		  <div id="timer" class="panel-body">
+		    
+		  </div>
+		</div>
+	</div>
+
+
+
+	<div class="row">
+		<div id="newGame">
+			<p><a class="btn btn-primary btn-lg" href="#" role="button">Play Again</a></p>
+		</div>
+	</div>
+</div>	
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="assets/js/scripts.js"></script>
-<!-- 
-	<script>
-		window.onload = startGame();
-	</script>
- -->
+	<script type="text/javascript" src="assets/js/app.js"></script>
 
 
 </body>
