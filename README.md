@@ -1,22 +1,26 @@
 # Trivia Game
 
 To-Do:
-Capture answer clicks
-	iterate variables
-	Show correct/incorrect screen
-	load next question after a few seconds
-End of Game: display summary to player
-enable "Play Again" button
 Come up with real questions
 Come up with fun facts/information for between questions
 
 Stretch Goals:
 Make page more exciting
 Use transitions to load/remove questions
-over-create questions so every game is not the same
+create enough questions so every game is not the same
 randomize order of questions so every game is not the same
 
 
+
+
+
+Done 8/26/2016
+End of Game: display summary to player
+enable "Play Again" button
+Capture answer clicks
+	iterate variables
+	Show correct/incorrect screen
+	load next question after a few seconds
 
 
 Done 8/25/2016
