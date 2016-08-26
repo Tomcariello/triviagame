@@ -2,9 +2,9 @@
 
 To-Do:
 Capture answer clicks
-	process correct/incorrect
 	iterate variables
-	load next question
+	Show correct/incorrect screen
+	load next question after a few seconds
 End of Game: display summary to player
 enable "Play Again" button
 Come up with real questions
@@ -26,3 +26,5 @@ Dynamically insert question text & choices onto screen
 Created 15 second timer function
 Set/Clear timers per question. Auto-advance when timer reaches zero.
 
+Capture answer clicks
+	process correct/incorrect
