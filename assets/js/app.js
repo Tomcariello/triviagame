@@ -1,61 +1,61 @@
 //create objects for each question
 var question01 = {
-	text: "question1_text", 
-	choices: ["1_1", "1_2", "1_3", "1_4"], 
+	text: "What was the main event at UFC 1?", 
+	choices: ["Royce Gracie	vs. Gerard Gordeau", "Royce Gracie vs. Ken Shamrock", "Patrick Smith vs. Art Jimmerson", "Kevin Rosier vs. Zane Frazier"], 
 	correctAnswer: 0, 
-	success: "You got it!", 
+	success: "UFC was contested under tournament rules. Royce Gracie won the tournament by defeating Gerard Gordeau via submission due to a rear naked choke. He had beaten Art Jimmerson and Ken Shamrock earlier in the night.", 
 };
 var question02 = {
-	text: "question2_text", 
-	choices: ["2_1", "2_2", "2_3", "2_4"], 
+	text: "Which US politician referred to the UFC as 'human cockfighting' in 1997?", 
+	choices: ["Tom Daschle", "John McCain", "Mitch McConnell", "Trent Lott"], 
 	correctAnswer: 1, 
-	success: "Yuppers"
+	success: "John McCain was a major reason why the UFC was banned in every state and taken off pay-per-view in the late 1990s. Politically, he was MMA's biggest adversary. McCain is still not a huge UFC fan, but has repeatedly said positive things about how far MMA has come since he railed against it."
 };
 var question03 = {
-	text: "question3_text",
-	choices: ["3_1", "3_2", "3_3", "3_4"],
-	correctAnswer: 2,
-	success: "Good job!"
+	text: "What superstar was most influential in the launch the UFC woman's bantamweight division?",
+	choices: ["Laila Ali", "Cris Cyborg", "Miesha Tate", "Ronda Rousey"],
+	correctAnswer: 3,
+	success: "The UFC had long balked at the prospect of adding women into its fold because of the perception that there wasn't enough depth to create meaningful weight classes. Rousey's rising stardom had a significant impact on the way the UFC  viewed the potential for female fighters in the UFC."
 };
 var question04 = {
-	text: "question4_text",
-	choices: ["4_1", "4_2", "4_3", "4_4"],
+	text: "What was middleweight Anderson Silva's excuse for failing a drug test?",
+	choices: ["Accidential ingestion", "Lab error", "Tainted sexual enhancement pills"],
 	correctAnswer: 3,
-	success: "Well done!"
+	success: "Silva tested positive before and after his fight in January against Nick Diaz at UFC 183. The results of the tests showed Silva had traces of Drostanolone along with Androstane. The former middleweight champion claimed a tainted product he took for sexual performance led to part of the positive results."
 };
 var question05 = {
-	text: "question1_text",
-	choices: ["5_1", "5_2", "5_3", "5_4"],
-	correctAnswer: 0,
-	success: "Go for the gold!"
+	text: "Who was the first two-division champion in UFC history?",
+	choices: ["BJ Penn", "Conor McGregor", "Daniel Cormier", "Randy Couture"],
+	correctAnswer: 3,
+	success: "Randy Couture is a former three-time UFC Heavyweight Champion, two-time UFC Light Heavyweight Champion, and the UFC 13 Heavyweight Tournament Winner. Couture is the first of only two fighters to hold two UFC championship titles in two different divisions (along with B.J. Penn)."
 };
 var question06 = {
-	text: "question2_text",
-	choices: ["6_1", "6_2", "6_3", "6_4"],
-	correctAnswer: 1,
-	success: "I'm impressed"
+	text: "Who is this?<br><img src='assets/images/who.png'>",
+	choices: ["Matt Hughes", "Frank Trigg", "George St Pierre", "Rich Franklin"],
+	correctAnswer: 2,
+	success: "I'm impressed by your performance."
 };
 var question07 = {
-	text: "question3_text",
-	choices: ["7_1", "7_2", "7_3", "7_4"],
-	correctAnswer: 2,
+	text: "Which UFC event had the most pay-per-view buys?",
+	choices: ["UFC 202", "UFC 200", "UFC 1", "UFC 100"],
+	correctAnswer: 4,
 	success: "Keep it going"
 };
 var question08 = {
-	text: "question4_text",
-	choices: ["8_1", "8_2", "8_3", "8_4"],
-	correctAnswer: 3,
+	text: "'The Ultimate Fighter' reality show is credited with making the UFC mainstream. Which two fighters fought in the light heavyweight finale?",
+	choices: ["Ken Shamrock vs. Rich Franklin", "Diego Sanchex vs Kenny Florian", "Forest Griffin vs. Stephen Bonnar", "Chris Leben vs Josh Koscheck"],
+	correctAnswer: 2,
 	success: "Perfect"
 };
 var question09 = {
-	text: "question1_text",
-	choices: ["9_1", "9_2", "9_3", "9_4"],
-	correctAnswer: 0,
+	text: "What was the last state in the US to legalize MMA contests?",
+	choices: ["Nevada", "New York", "California", "Texas"],
+	correctAnswer: 1,
 	success: "Well la di da!"
 };
 var question10 = {
-	text: "question2_text",
-	choices: ["10_1", "10_2", "10_3", "10_4"],
+	text: "Who won in Nate Diaz vs Conor McGregor II?",
+	choices: ["Nate Diaz", "Conor McGregor", "Draw", "No Contest"],
 	correctAnswer: 1,
 	success: "Not bad!"
 };
@@ -64,6 +64,7 @@ var questionArray = [question01,question02,question03,question04,question05,ques
 
 var questionAnsweredCorrectly = 0;
 var questionAnsweredIncorrectly = 0;
+var questionsUnanswered = 0;
 var questionTimerLength = 5;
 var questionTimer;
 var currentQuestion = 0;
@@ -115,7 +116,7 @@ function updateTimer() {
 	$('#timer').html(questionTimer);
 	if (questionTimer < 1 ) {
 		clearInterval(timerTarget);
-		currentQuestion++;
+		questionsUnanswered++;
 		showAnswer();
 	} else if (questionTimer < 6 ) {
 		$("#timer").addClass("lowTime");
@@ -132,16 +133,18 @@ function showAnswer() {
 	$( ".jumbotron" ).html("");
 	$( ".jumbotron" ).append( anwserToPrint + questionArray[currentQuestion].success);
 	currentQuestion++;
-	
+
 	setTimeout(function(){
+		
 		printQuestion();
-	},2000); 
+	},6000); 
 }
 
 function showEndGame(){
 	var correctInsertion;
 	var incorrectInsertion;
-	
+	var unansweredInsertion;
+
 	$( ".jumbotron" ).html("");
 	$( ".jumbotron" ).append("<H1>Game Over!</h1>");
 	if (questionAnsweredCorrectly == 1) {
@@ -156,8 +159,15 @@ function showEndGame(){
 		incorrectInsertion = "questions";
 	}
 
+	if (questionsUnanswered == 1) {
+		unansweredInsertion = "question";
+	} else {
+		unansweredInsertion = "questions";
+	}
+
 	$( ".jumbotron" ).append("<p>You got " + questionAnsweredCorrectly + " " + correctInsertion + " correct.</p>");
-	$( ".jumbotron" ).append("<p>You got " + questionAnsweredIncorrectly + " " + incorrectInsertion + " incorrect</p>.");
+	$( ".jumbotron" ).append("<p>You got " + questionAnsweredIncorrectly + " " + incorrectInsertion + " incorrect.</p>");
+	$( ".jumbotron" ).append("<p>You left " + questionsUnanswered + " " + unansweredInsertion + " unanswered.</p>");
 
 	$('#newGame').css("display", "block");
 }
