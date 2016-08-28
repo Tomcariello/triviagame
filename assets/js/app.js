@@ -65,11 +65,12 @@ var questionArray = [question01,question02,question03,question04,question05,ques
 var questionAnsweredCorrectly = 0;
 var questionAnsweredIncorrectly = 0;
 var questionsUnanswered = 0;
-var questionTimerLength = 5;
 var questionTimer;
 var currentQuestion = 0;
 var timerTarget;
 var questionSuccess = false;
+var questionTimerLength = 2;
+var timeToDisplayAnswers = 2000;
 
 
 function startGame() {
@@ -83,7 +84,7 @@ function startGame() {
 };
 
 function printQuestion() {
-	$('#timerWindow').css("display","block");
+	$('#timerWindow').css("visibility","visible");
 	if (currentQuestion <= questionArray.length - 1) {
 		questionSuccess = false;
 	
@@ -125,7 +126,7 @@ function updateTimer() {
 }
 
 function showAnswer() {
-	$('#timerWindow').css("display","none");
+	$('#timerWindow').css("visibility","hidden");
 	if (questionSuccess == true) {
 		anwserToPrint = ("<h2>You got it!</h2><hr>");
 	} else {
@@ -139,10 +140,12 @@ function showAnswer() {
 	setTimeout(function(){
 		
 		printQuestion();
-	},6000); 
+	},timeToDisplayAnswers); 
 }
 
 function showEndGame(){
+	$('#timerWindow').css("visibility","hidden");
+
 	var correctInsertion;
 	var incorrectInsertion;
 	var unansweredInsertion;
@@ -167,9 +170,9 @@ function showEndGame(){
 		unansweredInsertion = "questions";
 	}
 
-	$( ".jumbotron" ).append("You got " + questionAnsweredCorrectly + " " + correctInsertion + " correct.");
-	$( ".jumbotron" ).append("You got " + questionAnsweredIncorrectly + " " + incorrectInsertion + " incorrect.");
-	$( ".jumbotron" ).append("You left " + questionsUnanswered + " " + unansweredInsertion + " unanswered.");
+	$( ".jumbotron" ).append("<p>You got " + questionAnsweredCorrectly + " " + correctInsertion + " correct.</p>");
+	$( ".jumbotron" ).append("<p>You got " + questionAnsweredIncorrectly + " " + incorrectInsertion + " incorrect.</p>");
+	$( ".jumbotron" ).append("<p>You left " + questionsUnanswered + " " + unansweredInsertion + " unanswered.</p>");
 
 	$('#newGame').css("display", "block");
 }
