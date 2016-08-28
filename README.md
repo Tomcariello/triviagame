@@ -11,7 +11,8 @@ create enough questions so every game is not the same
 randomize order of questions so every game is not the same
 
 
-
+8/28/2016
+Hide timer during answer page
 
 
 Done 8/26/2016

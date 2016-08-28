@@ -83,6 +83,7 @@ function startGame() {
 };
 
 function printQuestion() {
+	$('#timerWindow').css("display","block");
 	if (currentQuestion <= questionArray.length - 1) {
 		questionSuccess = false;
 	
@@ -124,6 +125,7 @@ function updateTimer() {
 }
 
 function showAnswer() {
+	$('#timerWindow').css("display","none");
 	if (questionSuccess == true) {
 		anwserToPrint = ("<h2>You got it!</h2><hr>");
 	} else {
