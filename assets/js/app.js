@@ -33,31 +33,31 @@ var question06 = {
 	text: "Who is this?<br><img src='assets/images/who.png'>",
 	choices: ["Matt Hughes", "Frank Trigg", "George St Pierre", "Rich Franklin"],
 	correctAnswer: 2,
-	success: "I'm impressed by your performance."
+	success: "Georges St Pierre (GSP) is a three-time former UFC Welterweight Champion. He is frequently cited as one of the greatest MMA fighters of all time. On December 13, 2013, while holding the record for most wins in title bouts in UFC history, St-Pierre vacated the title and retired from the sport."
 };
 var question07 = {
 	text: "Which UFC event had the most pay-per-view buys?",
-	choices: ["UFC 202", "UFC 200", "UFC 1", "UFC 100"],
+	choices: ["UFC 202", "UFC 196", "UFC 1", "UFC 100"],
 	correctAnswer: 4,
-	success: "Keep it going"
+	success: "UFC 100, headlined by a heavyweight clash between Brock Lesnar and Frank Mir and also featuring a middleweight bout between Dan Henderson and Michael Bisping, sold 1.6 million buys on pay-per-view."
 };
 var question08 = {
-	text: "'The Ultimate Fighter' reality show is credited with making the UFC mainstream. Which two fighters fought in the light heavyweight finale?",
-	choices: ["Ken Shamrock vs. Rich Franklin", "Diego Sanchex vs Kenny Florian", "Forest Griffin vs. Stephen Bonnar", "Chris Leben vs Josh Koscheck"],
+	text: "'The Ultimate Fighter' reality show is credited with making the UFC mainstream. Which two light heavyweight fighters featured on the show fought in the finale?",
+	choices: ["Ken Shamrock vs. Rich Franklin", "Diego Sanchez vs Kenny Florian", "Forest Griffin vs. Stephen Bonnar", "Chris Leben vs Josh Koscheck"],
 	correctAnswer: 2,
-	success: "Perfect"
+	success: "Even though the main attraction of the event was Rich Franklin vs the UFC Hall of Famer Ken Shamrock the spotlight was stolen by the incredible bout between Forrest Griffin and Stephan Bonnar. Hailed as one of the greatest fights in MMA history by many, Forrest and Stephan produced a 3 round stand up war that went the distance. Although Forrest Griffin would take the decision both men were given UFC contracts for their amazing performance."
 };
 var question09 = {
 	text: "What was the last state in the US to legalize MMA contests?",
 	choices: ["Nevada", "New York", "California", "Texas"],
 	correctAnswer: 1,
-	success: "Well la di da!"
+	success: "For years, the UFC had lobbied to overturn a 1997 action outlawing the sport in New York state, but its efforts were repeatedly stymied. On March 23, 2016, New York became the last state to legalize MMA. The legalization of MMA competitions in New York State will allow the UFC to hold events in the world famouse Madison Square Garden later this year."
 };
 var question10 = {
-	text: "Who won in Nate Diaz vs Conor McGregor II?",
-	choices: ["Nate Diaz", "Conor McGregor", "Draw", "No Contest"],
-	correctAnswer: 1,
-	success: "Not bad!"
+	text: "What submission technique has been used the most to end fights in the UFC?",
+	choices: ["Triangle", "Heel hook", "Rear naked choke", "Armbar"],
+	correctAnswer: 2,
+	success: "The rear naked choke (RNC) is a chokehold in martial arts applied from an opponent's back. Either arm can be used to apply the choke. The attacker's arm encircles the opponent's neck and then grabs his own biceps on the other arm to apply pressure to both sides of the opponents' neck. This is considered a 'blood choke' because it restricts blood flow to the brain via the carotid arteries."
 };
 
 var questionArray = [question01,question02,question03,question04,question05,question06,question07,question08,question09,question10];
@@ -167,9 +167,9 @@ function showEndGame(){
 		unansweredInsertion = "questions";
 	}
 
-	$( ".jumbotron" ).append("<p>You got " + questionAnsweredCorrectly + " " + correctInsertion + " correct.</p>");
-	$( ".jumbotron" ).append("<p>You got " + questionAnsweredIncorrectly + " " + incorrectInsertion + " incorrect.</p>");
-	$( ".jumbotron" ).append("<p>You left " + questionsUnanswered + " " + unansweredInsertion + " unanswered.</p>");
+	$( ".jumbotron" ).append("You got " + questionAnsweredCorrectly + " " + correctInsertion + " correct.");
+	$( ".jumbotron" ).append("You got " + questionAnsweredIncorrectly + " " + incorrectInsertion + " incorrect.");
+	$( ".jumbotron" ).append("You left " + questionsUnanswered + " " + unansweredInsertion + " unanswered.");
 
 	$('#newGame').css("display", "block");
 }
