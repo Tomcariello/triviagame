@@ -3,14 +3,14 @@
 To-Do:
 Add quiz game title/logo/header (something)
 
-
 Stretch Goals:
 Use transitions to load/remove questions
 Create enough questions so every game is not the same
-Randomize order of questions so every game is not the same
-
 
 ***Worklog***
+
+8/29/2016
+Randomize order of questions so every game is not the same
 
 8/28/2016
 Hide timer during answer page

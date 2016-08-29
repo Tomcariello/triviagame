@@ -20,7 +20,7 @@ var question03 = {
 var question04 = {
 	text: "What was middleweight Anderson Silva's excuse for failing a drug test?",
 	choices: ["Accidential ingestion", "Lab error", "Tainted sexual enhancement pills"],
-	correctAnswer: 3,
+	correctAnswer: 2,
 	success: "Silva tested positive before and after his fight in January against Nick Diaz at UFC 183. The results of the tests showed Silva had traces of Drostanolone along with Androstane. The former middleweight champion claimed a tainted product he took for sexual performance led to part of the positive results."
 };
 var question05 = {
@@ -38,7 +38,7 @@ var question06 = {
 var question07 = {
 	text: "Which UFC event had the most pay-per-view buys?",
 	choices: ["UFC 202", "UFC 196", "UFC 1", "UFC 100"],
-	correctAnswer: 4,
+	correctAnswer: 3,
 	success: "UFC 100, headlined by a heavyweight clash between Brock Lesnar and Frank Mir and also featuring a middleweight bout between Dan Henderson and Michael Bisping, sold 1.6 million buys on pay-per-view."
 };
 var question08 = {
@@ -69,8 +69,8 @@ var questionTimer;
 var currentQuestion = 0;
 var timerTarget;
 var questionSuccess = false;
-var questionTimerLength = 2;
-var timeToDisplayAnswers = 2000;
+var questionTimerLength = 25;
+var timeToDisplayAnswers = 6000;
 
 
 function startGame() {
@@ -80,8 +80,19 @@ function startGame() {
 	questionTimer = questionTimerLength;
 	currentQuestion = 0;
 	questionSuccess = false;
+	shuffle(questionArray);
 	printQuestion();
 };
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+    }
+}
 
 function printQuestion() {
 	$('#timerWindow').css("visibility","visible");
